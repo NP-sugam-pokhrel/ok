@@ -134,6 +134,8 @@ a.send_keys(Keys.TAB).perform()
 a.send_keys(Keys.TAB).perform()
 a.send_keys(Keys.TAB).perform()
 a.send_keys(Keys.TAB).perform()
+driver.refresh()
+
 
 link=driver.find_element(By.PARTIAL_LINK_TEXT,'Welcome to Leap - Account Activation').get_attribute('href')
 
