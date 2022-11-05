@@ -10,9 +10,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import string
 import random
-import tkinter as tk
+
 from selenium.webdriver import ActionChains
-from lib2to3.pgen2 import driver
+
 
 
 from selenium import  webdriver
