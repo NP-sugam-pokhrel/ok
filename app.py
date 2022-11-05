@@ -128,6 +128,13 @@ driver.refresh()
 driver.refresh()
 time.sleep(5)
 driver.refresh()
+time.sleep(5)
+a.send_keys(Keys.TAB).perform()
+a.send_keys(Keys.TAB).perform()
+a.send_keys(Keys.TAB).perform()
+a.send_keys(Keys.TAB).perform()
+a.send_keys(Keys.TAB).perform()
+
 driver.find_element(By.PARTIAL_LINK_TEXT,'Welcome to Leap - Account Activation').click()
 
 time.sleep(6)
