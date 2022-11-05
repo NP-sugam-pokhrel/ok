@@ -128,7 +128,7 @@ driver.refresh()
 driver.refresh()
 time.sleep(5)
 driver.refresh()
-driver.find_element(By.XPATH,'//*[@id="maillist"]/tbody/tr[2]').click()
+driver.find_element(By.PARTIAL_LINK_TEXT,'Welcome to Leap - Account Activation').click()
 
 time.sleep(6)
 driver.refresh()
@@ -138,7 +138,7 @@ try:
     driver.find_element(By.XPATH,'//*[@id="tab3"]/p/a[1]').click()
 except :
     driver.refresh()
-    driver.find_element(By.XPATH,'//*[@id="maillist"]/tbody/tr[2]').click()
+    driver.find_element(By.PARTIAL_LINK_TEXT,'Welcome to Leap - Account Activation').click()
 
 time.sleep(6)
 driver.refresh()
