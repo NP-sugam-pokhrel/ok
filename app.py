@@ -146,10 +146,10 @@ time.sleep(6)
 driver.get(link)
 
 time.sleep(2)    
-driver.find_element(By.XPATH,'//*[@id="tab3"]/p/a[1]').click()
+cc= driver.find_element(By.XPATH,'//*[@id="tab3"]/p/a[1]').get_attribute('href')
+driver.get(cc)
 time.sleep(3)
-log = driver.window_handles[2]
-driver.switch_to.window(log)
+
 a.send_keys(email)
 a.send_keys(Keys.TAB).perform()     
 
