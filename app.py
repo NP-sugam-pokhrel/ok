@@ -140,7 +140,7 @@ link=driver.find_element(By.PARTIAL_LINK_TEXT,'Welcome to Leap - Account Activat
 
 
 
-
+print(email)
 
 time.sleep(6)
 driver.get(link)
