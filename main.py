@@ -68,7 +68,13 @@ time.sleep(10)
 driver.refresh()
 time.sleep(20)
 driver.find_element(By.XPATH,'//*[@id="inbox-dataList"]').click()
+
 time.sleep(5)
+a.send_keys(Keys.TAB).perform()
+a.send_keys(Keys.TAB).perform()
+a.send_keys(Keys.TAB).perform()
+a.send_keys(Keys.TAB).perform()
+
 link=driver.find_element(By.XPATH,'//*[@id="ReadContent"]/center/div/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table[4]/tbody/tr/td/table/tbody/tr/td/a').get_attribute("href")
 driver.get(link)
 
